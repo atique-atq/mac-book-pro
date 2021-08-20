@@ -1,60 +1,50 @@
-/*----------
-    Memory
- ----------*/
-// event handler for 8GB memory button
+/*-------------------
+    Events Handlers
+ -------------------*/
+// event handlers for memory button
 document.getElementById('8gb-memory-btn').addEventListener('click', function () {
     updateFields('memory-cost', 0);
 })
-// event handler for 16GB MEMORY button
 document.getElementById('16gb-memory-btn').addEventListener('click', function () {
     updateFields('memory-cost', 180);
 })
 
-
-/*------------
-   Storage
- ------------*/
-// event handler for 256GB Storage button
+// event handlers for Storage button
 document.getElementById('256gb-storage-btn').addEventListener('click', function () {
     updateFields('storage-cost', 0);
 })
-// event handler for 512GB Storage button
 document.getElementById('512gb-storage-btn').addEventListener('click', function () {
     updateFields('storage-cost', 100);
 })
-// event handler for 1TB Storage button
 document.getElementById('1tb-storage-btn').addEventListener('click', function () {
     updateFields('storage-cost', 180);
 })
 
-
-/*------------
-   Delivery
- ------------*/
-// event handler for FREE Delivery button
+// event handler for  Delivery button
 document.getElementById('free-delivery-btn').addEventListener('click', function () {
     updateFields('delivery-cost', 0);
 })
-// event handler for Paid Delivery button
 document.getElementById('paid-delivery-btn').addEventListener('click', function () {
     updateFields('delivery-cost', 20);
 })
 
-// utility functions 
+/*-------------------
+   utility functions 
+ -------------------*/
+//updates necessary fields for corresponding events
 function updateFields(fieldIdToUpdate, fieldPriceToUpdate) {
     setPrice(fieldIdToUpdate, fieldPriceToUpdate);
-    setPrice('total-price', totalPrice());
+    let netPrice = totalPrice();
+    setPrice('total-price', netPrice);
+    setPrice('footer-price', netPrice);
 }
 function setPrice(id, price) {
     document.getElementById(id).innerText = price;
 }
 function totalPrice() {
-    let bestPrice = getPrice('best-price');
-    let memoryPrice = getPrice('memory-cost');
-    let storagePrice = getPrice('storage-cost');
-    let deliveryPrice = getPrice('delivery-cost');
-    return bestPrice + memoryPrice + storagePrice + deliveryPrice;
+    return getPrice('best-price') + getPrice('memory-cost') + getPrice('storage-cost') + getPrice('delivery-cost');
 }
+//fetching present value of a field
 function getPrice(id) {
-    return parseFloat(document.getElementById(id).innerText)
+    return parseFloat(document.getElementById(id).innerText);
 }
