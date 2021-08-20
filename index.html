@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buy Macbook</title>
+    <link rel="stylesheet" href="css/style.css">
     <!-- Bootstrap Stylesheets -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -35,8 +36,10 @@
                             Magic Keyboard - US English</p>
                         <!-- Memory  -->
                         <h4 class="mt-5">Memory</h4>
-                        <button type="button" class="btn btn-light btn-link-hover">8GB unified memory</button>
-                        <button type="button" class="btn btn-light btn-link-hover">16GB unified memory</button>
+                        <button id='8gb-memory-btn' type="button" class="btn btn-light btn-link-hover">8GB unified
+                            memory</button>
+                        <button id='16gb-memory-btn' type="button" class="btn btn-light btn-link-hover">16GB unified
+                            memory</button>
                         <!-- Storage  -->
                         <h4 class="mt-5">Storage</h4>
                         <button type="button" class="btn btn-light">256GB SSD Storage</button>
@@ -48,55 +51,50 @@
                             Delivery</button>
                         <button type="button" class="btn btn-light">Friday, Aug 21 Delivery Charge
                             $20</button>
-                        <!-- <div class="row"> -->
-                        <!-- d-flex justify-content-between">
-                                <p>This is Testing</p>
-                                <p>This is another</p>
-                            </div> -->
-                        <!-- </div> -->
+
                         <div class="col-lg-6  mt-5">
                             <table class="table">
                                 <tbody class="fw-bold">
                                     <tr>
                                         <td>Best Price</td>
-                                        <td>$1299</td>
+                                        <td>$<span id='best-price'>1299</span></td>
                                     </tr>
                                     <tr>
                                         <td>Extra memory cost</td>
-                                        <td>$0</td>
+                                        <td>$<span id='memory-cost'>0</span></td>
                                     </tr>
                                     <tr>
                                         <td>Extra storage cost</td>
-                                        <td>$0</td>
+                                        <td>$<span id='storage-cost'>0</span></td>
                                     </tr>
                                     <tr>
                                         <td>Delivery charge</td>
-                                        <td>$0</td>
+                                        <td>$<span id='delivery-cost'>0</span></td>
                                     </tr>
                                 </tbody>
                                 <tfoot>
                                     <tr>
                                         <th scope="col">Total Price</th>
-                                        <th scope="col">$1299</th>
+                                        <th scope="col">$<span id='total-price'>1299</span></th>
                                     </tr>
                                 </tfoot>
                             </table>
                         </div>
-
                         <h6>Add promo code</h6>
                         <input type="text" style="height:30px" name="" id="">
-                        <button type="button" class="btn btn-danger pt-0">Apply</button>
+                        <button type="button" class="discount-button">Apply</button>
                     </div>
                 </div>
         </section>
     </main>
-
     <!-- footer starts -->
     <footer class="container text-center">
         <hr>
         <h1 class="align-middle">Total: $1299</h1>
     </footer>
+
     <!-- Bootstrap Script -->
+    <script src="js/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>

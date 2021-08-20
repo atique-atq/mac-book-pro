@@ -1,0 +1,11 @@
+.discount-button{
+    text-align: center;
+    justify-content: center;
+    padding-top: 2px;
+    padding-bottom:1px ;
+    background-color: red;
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+}
