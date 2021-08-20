@@ -10,6 +10,7 @@ document.getElementById('16gb-memory-btn').addEventListener('click', function ()
     updateFields('memory-cost', 180);
 })
 
+
 /*------------
    Storage
  ------------*/
@@ -26,23 +27,20 @@ document.getElementById('1tb-storage-btn').addEventListener('click', function ()
     updateFields('storage-cost', 180);
 })
 
+
 /*------------
    Delivery
  ------------*/
-// event handler for 256GB Storage button
-document.getElementById('256gb-storage-btn').addEventListener('click', function () {
-    updateFields('storage-cost', 0);
+// event handler for FREE Delivery button
+document.getElementById('free-delivery-btn').addEventListener('click', function () {
+    updateFields('delivery-cost', 0);
 })
-// event handler for 512GB Storage button
-document.getElementById('512gb-storage-btn').addEventListener('click', function () {
-    updateFields('storage-cost', 100);
-})
-// event handler for 1TB Storage button
-document.getElementById('1tb-storage-btn').addEventListener('click', function () {
-    updateFields('storage-cost', 180);
+// event handler for Paid Delivery button
+document.getElementById('paid-delivery-btn').addEventListener('click', function () {
+    updateFields('delivery-cost', 20);
 })
 
-// utilities functions 
+// utility functions 
 function updateFields(fieldIdToUpdate, fieldPriceToUpdate) {
     setPrice(fieldIdToUpdate, fieldPriceToUpdate);
     setPrice('total-price', totalPrice());
