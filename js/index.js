@@ -28,6 +28,17 @@ document.getElementById('paid-delivery-btn').addEventListener('click', function 
     updateFields('delivery-cost', 20);
 })
 
+//event handler for Promo Code
+document.getElementById('promo-code-btn').addEventListener('click', function () {
+    let promoCodeField = document.getElementById('promo-code-field');
+    if (promoCodeField.value.toLowerCase() == 'stevekaku') {
+        let netPrice = totalPrice();
+        let discountedPrice = netPrice - (netPrice * .20);
+        setPrice('footer-price', discountedPrice);
+        promoCodeField.value = '';
+    }
+})
+
 /*-------------------
    utility functions 
  -------------------*/
